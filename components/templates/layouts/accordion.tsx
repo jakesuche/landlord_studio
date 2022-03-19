@@ -15,7 +15,7 @@ const AccordionItem = styled.div`
   box-shadow: 0.5rem 2px 0.5rem rgba(0, 0, 0, 0.1);
 `;
 const AccordionLink = styled.a`
-  font-size: 1.6rem;
+  font-size: 1.2rem;
   color: #000;
   text-decoration: none;
   background-color: #fff;
@@ -25,6 +25,7 @@ const AccordionLink = styled.a`
   align-items: center;
   justify-content: space-between;
   padding: 0rem 0;
+  height:20px;
   span {
     color: #283042;
     padding: 0.5rem;
@@ -37,6 +38,7 @@ const AccordionBody = styled.div<StyleProps>`
   position: relative;
   background-color: #cbceef29;
   transition: max-height 650ms;
+  margin-top:4px;
   p {
     font-size: 1.4rem;
     color: #0000009e;
@@ -45,8 +47,8 @@ const AccordionBody = styled.div<StyleProps>`
 `;
 
 type Iprops = {
-  children: React.ReactNode;
-  header: string;
+  children?: React.ReactNode;
+  header?: string;
 };
 type StyleProps = {
   open: boolean;
