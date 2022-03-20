@@ -53,14 +53,35 @@ const Input = styled.input`
   min-width: 0;
 `;
 
-const Login = () => {
+type Iprops = {
+  placeholder?: string;
+  icon?: string;
+  type?: string;
+  onChange?: React.ChangeEventHandler<HTMLInputElement> | undefined;
+  style?: { [key: string]: number | string };
+  groupStyle?:{ [key: string]: number | string };
+};
+
+const Login: React.FC<Iprops> = ({
+  placeholder,
+  icon,
+  type,
+  onChange,
+  groupStyle,
+  style,
+}) => {
   return (
     <>
-      <InputGroup>
+      <InputGroup style={groupStyle}>
         <InputText>
-          <Icon name="bi-person-bounding-box" />
+          <Icon name={icon ? icon : "bi-person-bounding-box"} />
         </InputText>
-        <Input type="text" placeholder="Username" />
+        <Input
+          style={style}
+          onChange={onChange}
+          type={type}
+          placeholder={placeholder ? placeholder : "Placeholder here"}
+        />
       </InputGroup>
     </>
   );

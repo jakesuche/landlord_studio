@@ -15,9 +15,9 @@ const Login = () => {
     <Wrapper>
       <Container
         height={`100%`}
-        className="d-flex justify-content-center align-items-center  "
+        className="d-flex justify-content-center align-items-center"
       >
-        <LoginLayout />
+        <LoginLayout show />
       </Container>
     </Wrapper>
   );

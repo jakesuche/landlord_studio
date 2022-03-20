@@ -1,5 +1,8 @@
 import React from "react";
-import styles from './Button.module.css'
+
+import { CustomButton } from "./styles";
+import Loader from '../Loader'
+
 
 type Props = {
   name?: string;
@@ -7,22 +10,34 @@ type Props = {
   className?: string;
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
   style?: any;
+  loading:boolean
 };
 
+const Button: React.FC<Props> = ({ name, onClick, children, type, loading }) => {
+  const ButtonRef = React.useRef(null);
 
-
-const Button: React.FC<Props> = ({
-  name,
-  onClick,
-  children,
-  style,
-  type,
-  className,
-}) => {
+  React.useEffect(() => {
+    //@ts-ignore
+    ButtonRef.current.addEventListener("click", function (e: any) {
+     
+      let x = e.clientX - e.target.offsetLeft;
+      let y = e.clientY - e.target.offsetTop;
+      //@ts-ignore
+      let ripple = document.createElement("span");
+      ripple.style.left = x + "px";
+      ripple.style.top = y + "px";
+      //@ts-ignore
+      ButtonRef.current.appendChild(ripple);
+      //@ts-ignore
+      setTimeout(() => {
+        ripple.remove();
+      }, 1000);
+    });
+  }, []);
   return (
-    <button type={type} style={style} onClick={onClick} className={`${className}`}>
-      {children}
-    </button>
+    <CustomButton ref={ButtonRef} type={type} onClick={onClick}>
+      {loading  ?  <Loader/>: children}
+    </CustomButton>
   );
 };
 
