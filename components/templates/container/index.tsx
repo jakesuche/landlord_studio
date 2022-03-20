@@ -1,11 +1,16 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+
+type StyleProps = {
+  height:string
+}
+export const Container = styled.div<StyleProps>`
   width: 100%;
   padding-right: var(--bs-gutter-x, 0.75rem);
   padding-left: var(--bs-gutter-x, 0.75rem);
   margin-right: auto;
   margin-left: auto;
+  height:${(props) => (props.height && props.height )};
   
   @media (min-width: 576px) {
     max-width: 540px;
@@ -30,11 +35,13 @@ export const Container = styled.div`
 `;
 
 type Iprops = {
-    children:React.ReactNode
+    children:React.ReactNode;
+    className:string;
+    height:string;
 }
 
-const HomeContainer = ({children}:Iprops) => {
-  return <Container>
+const HomeContainer = ({children, className, height}:Iprops) => {
+  return<Container height={height} className={className}>
 
     {children}
   </Container>;
