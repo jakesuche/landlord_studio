@@ -20,6 +20,7 @@ const Authlayout = ({ children }: Iprops) => {
   return (
     <>
       <div className={styles.container}>
+        {/* <Header/> */}
         <Sidebar />
         
         <section className="home-section">

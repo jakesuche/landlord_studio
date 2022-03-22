@@ -9,8 +9,8 @@ export const sidebarData = [
     ],
   },
   {
-    link_name: "Category",
-    icon: "bi-window-stack",
+    link_name: "Organisation",
+    icon: "bi-building",
     sub_nav: [
       {
         link_name: "HTML & CSS",
@@ -24,8 +24,8 @@ export const sidebarData = [
     ],
   },
   {
-    link_name: "Posts",
-    icon: "bi-file-post-fill",
+    link_name: "Properties",
+    icon: "bi-house-door",
     sub_nav: [
       {
         link_name: "Web Design",
@@ -39,8 +39,8 @@ export const sidebarData = [
     ],
   },
   {
-    link_name: "Analytics",
-    icon: "bi-graph-down",
+    link_name: "Reports",
+    icon: "bi-clipboard-data",
   },
   {
     link_name: "Chart",

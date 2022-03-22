@@ -27,6 +27,7 @@ export const CustomButton = styled.button<Iprops>`
     transform: translate(-50%, -50%);
     animation: animate 1s linear infinite;
     border-radius:100%;
+  
   }
 
   @keyframes animate {
