@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import Icon from "../../atoms/Icon/Icon";
 import { sidebarData } from '../../../utils/data.js'
-console.log(sidebarData)
+import { useRouter, NextRouter} from 'next/router'
 
 
 
@@ -9,7 +9,12 @@ const Sidebar = () => {
   const btnRef: React.MutableRefObject<null> = useRef(null);
   const sidebarRef: React.MutableRefObject<null> = useRef(null);
   const searchButton: React.MutableRefObject<null> = useRef(null);
+  const router:NextRouter = useRouter()
 
+
+  const navigate = (link:string) => {
+        router.push(link)
+  }
 
   const toggleSidebar = () => {
     //@ts-ignore
@@ -30,7 +35,7 @@ const Sidebar = () => {
         {sidebarData?.map((bar: any) => {
           return (
             <li>
-              <a href="#">
+              <a onClick={()=>navigate(bar.link)} href="#">
                 <Icon name={bar.icon}></Icon>
                 <span className="link_name">{bar.link_name}</span>
               </a>

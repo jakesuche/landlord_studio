@@ -2,6 +2,7 @@ export const sidebarData = [
   {
     link_name: "Dashboard",
     icon: "bi-grid",
+    link:'/dashboard',
     sub_nav: [
       {
         link_name: "category",
@@ -11,21 +12,18 @@ export const sidebarData = [
   {
     link_name: "Organisation",
     icon: "bi-building",
+    link:"/organisation",
     sub_nav: [
-      {
-        link_name: "HTML & CSS",
-      },
+      
       {
         link_name: "Javascript",
-      },
-      {
-        link_name: "PHP & MySQL",
       },
     ],
   },
   {
     link_name: "Properties",
     icon: "bi-house-door",
+    link:"properties",
     sub_nav: [
       {
         link_name: "Web Design",
