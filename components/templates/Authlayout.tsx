@@ -1,29 +1,26 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
-import Header from "../../components/organisms/Header/Header";
-
+import Header from "../organisms/Header/Header";
 import styles from "../../styles/Home.module.css";
-import Link from "next/link";
 import React, { useRef, useState } from "react";
 
-import { shimmer, toBase64 } from "../../helpers/component_helpers";
-import Section from "../templates/Section";
-import Sidebar from "../../components/organisms/Sidebar/Sidebar";
+
+import Sidebar from "../organisms/Sidebar/Sidebar";
 
 
 type Iprops = {
   children: React.ReactNode;
+  style:{[key:string]:string | number}
 };
 
-const Authlayout = ({ children }: Iprops) => {
+const Authlayout = ({ children ,style}: Iprops) => {
   return (
     <>
       <div className={styles.container}>
-        {/* <Header/> */}
         <Sidebar />
-        
-        <section className="home-section">
+        <section style={style} className="home-section">
+        <Header style={{position: "absolute"}}/>
           <div className="home-content">
             {children}
           </div>
@@ -34,6 +31,3 @@ const Authlayout = ({ children }: Iprops) => {
 };
 
 export default Authlayout;
-{
-  /* <Header /> */
-}

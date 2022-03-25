@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import Icon from "../../atoms/Icon/Icon";
 import { sidebarData } from '../../../utils/data.js'
 import { useRouter, NextRouter} from 'next/router'
+import { useLocalStorage } from 'helpers/custom_hooks'
 
 
 
@@ -9,19 +10,28 @@ const Sidebar = () => {
   const btnRef: React.MutableRefObject<null> = useRef(null);
   const sidebarRef: React.MutableRefObject<null> = useRef(null);
   const searchButton: React.MutableRefObject<null> = useRef(null);
-  const router:NextRouter = useRouter()
-
+  const router = useRouter()
+  const [state, setState] =  useLocalStorage('close', true)
+  console.log(state)
 
   const navigate = (link:string) => {
-        router.push(link)
+       
+       if(link != undefined) {
+          router.push(link)
+       }
   }
+
 
   const toggleSidebar = () => {
     //@ts-ignore
-    sidebarRef.current.classList.toggle("close");
+    setState(!state)
+    // sidebarRef.current.classList.toggle("close");
+    
   };
+
   return (
-    <div ref={sidebarRef} className="sidebar close bg-primary">
+    
+    <div ref={sidebarRef} className={`sidebar  bg-primary ${state ? 'close' :''}`}>
       <div className="logo-details">
         <Icon
           onClick={toggleSidebar}

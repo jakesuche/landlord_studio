@@ -73,9 +73,14 @@ const Login: React.FC<Iprops> = ({
   return (
     <>
       <InputGroup style={groupStyle}>
-        <InputText>
-          <Icon name={icon ? icon : "bi-person-bounding-box"} />
-        </InputText>
+        {
+          icon && (
+            <InputText>
+            <Icon name={icon ? icon : "bi-person-bounding-box"} />
+          </InputText>
+          )
+        }
+       
         <Input
           style={style}
           onChange={onChange}

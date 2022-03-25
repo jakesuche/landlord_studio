@@ -24,6 +24,6 @@
       ]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "models.d.ts", "components/templates/container/index.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "models.d.ts", "components/templates/container/index.js", "helpers/custom_hooks.ts", "utils/styles.js", "components/common/Table/index.tsx", "pages/components.tsx"],
   "exclude": ["node_modules"]
 }

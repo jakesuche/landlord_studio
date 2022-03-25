@@ -6,7 +6,7 @@ type Iprops = {
 
 export const CustomButton = styled.button<Iprops>`
   border: none;
-  border-radius: 2px;
+  border-radius: 5px;
   padding: 12px 18px;
   font-size: 13px;
   text-transform: uppercase;

@@ -9,11 +9,12 @@ type Props = {
   type?: "reset" | "button" | "submit";
   className?: string;
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
-  style?: any;
-  loading:boolean
+  buttonStyle?: { [key: string]: number | string};
+  loading?:boolean;
+  backgroundColor?:string;
 };
 
-const Button: React.FC<Props> = ({ name, onClick, children, type, loading }) => {
+const Button: React.FC<Props> = ({ name, onClick, children, type, loading,backgroundColor,buttonStyle }) => {
   const ButtonRef = React.useRef(null);
 
   React.useEffect(() => {
@@ -35,7 +36,7 @@ const Button: React.FC<Props> = ({ name, onClick, children, type, loading }) => 
     });
   }, []);
   return (
-    <CustomButton ref={ButtonRef} type={type} onClick={onClick}>
+    <CustomButton style={buttonStyle}  backgroundColor={backgroundColor} ref={ButtonRef} type={type} onClick={onClick}>
       {loading  ?  <Loader/>: children}
     </CustomButton>
   );

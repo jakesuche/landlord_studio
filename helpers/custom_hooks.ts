@@ -5,15 +5,18 @@ export const useLocalStorage = (
   defaultValue: any = "",
   { serialize = JSON.stringify, deserialize = JSON.parse } = {}
 ) => {
+
   const [state, setState] = useState(() => {
-    const valueInLocalStorage = window.localStorage.getItem(key);
+    const valueInLocalStorage = typeof window !== "undefined" && window.localStorage.getItem(key);
     if (valueInLocalStorage) {
       return deserialize(valueInLocalStorage);
     }
     return defaultValue;
   });
   React.useEffect(() => {
-    window.localStorage.setItem(key, serialize(state));
+    if(typeof window !== 'undefined') {
+      window.localStorage.setItem(key, serialize(state));
+    }
   }, [key, state]);
 
   return [state, setState];

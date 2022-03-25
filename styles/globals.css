@@ -17,7 +17,7 @@
   height: 100%;
   width: 260px;
   background: #11101d;
-  z-index: 100;
+  z-index: 9999;
   transition: all 0.5s ease;
 }
 .sidebar.close{
@@ -226,7 +226,7 @@
 }
 .home-section .home-content{
   height: 100%;
-  display: flex;
+  /* display: flex; */
 }
 .home-section .home-content .bx-menu,
 .home-section .home-content .text{

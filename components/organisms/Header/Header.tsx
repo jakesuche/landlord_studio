@@ -6,11 +6,16 @@ import { useRouter } from 'next/router'
 
 type ref = {
   buttonRef?: React.LegacyRef<HTMLButtonElement> | undefined
-  openClose:boolean
+  openClose:boolean;
+  style:{[key:string]:string | number}
+}
+
+type Iprops = {
+  style:{[key:string]:string | number}
 }
 
 
-const Header = () => {
+const Header = ({style}:Iprops) => {
 
   const buttonRef:ref["buttonRef"] = useRef(null)
   const [openClose, setOpenClose] = useState<ref["openClose"]>(false)
@@ -44,6 +49,7 @@ const Header = () => {
       </head>
       </Head>
       <nav
+      style={style}
         className="navbar navbar-expand-lg navbar-light fixed-top shadow-sm"
         id="mainNav"
       >

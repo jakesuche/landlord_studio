@@ -23,7 +23,7 @@ export const sidebarData = [
   {
     link_name: "Properties",
     icon: "bi-house-door",
-    link:"properties",
+    link:"/properties",
     sub_nav: [
       {
         link_name: "Web Design",
@@ -57,11 +57,36 @@ export const sidebarData = [
     icon: "bi-clock-history",
   },
   {
-    link_name: "History",
+    link_name: "Components",
     icon: "bi-clock-history",
+    link:"/components"
   },
   {
     link_name: "Setting",
     icon: "bi-gear",
   },
 ];
+
+
+export const DashboardTabItems = [
+  {
+    title:'All',
+    active:true
+  },
+  {
+    title:'Rent Overdue',
+    active:false
+  }, {
+    title:'Rent Due soon',
+    active:false
+  }, {
+    title:'Rent Due later',
+    active:false
+  }, {
+    title:'Vacant',
+    active:false
+  }, {
+    title:'Multi-Unit',
+    active:false
+  }
+]
